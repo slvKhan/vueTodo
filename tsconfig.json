@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "target": "es6",
+      "allowJs": true,
+      "baseUrl": ".",
+      "paths": {
+        "@/*": [
+          "src/js/frontend/*"
+        ],
+      }
+    },
+}
