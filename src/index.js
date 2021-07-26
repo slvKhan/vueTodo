@@ -1,6 +1,7 @@
-import i from './components/i';
-import a from '@/qwe';
+import Vue from 'vue';
+import App from './components/app/app.vue';
 
-i();
-console.log(a + 'qweeqwe');
-console.log('init');
+new Vue({
+    el: '#root',
+    render: h => h(App),
+});

@@ -1,6 +1,7 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
    mode: 'development',
@@ -29,6 +30,7 @@ module.exports = {
    },
    plugins: [
       new VueLoaderPlugin(),
+      new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
          template: './src/index.html'
       })
@@ -37,5 +39,11 @@ module.exports = {
       alias: {
          '@': path.join(__dirname, 'src/js/frontend'),
       }
-   }
+   },
+   devServer: {
+      port: 4200,
+      contentBase: path.join(__dirname, 'src/html_templates'),
+      watchContentBase: true,
+      hot: true
+    },
 }
